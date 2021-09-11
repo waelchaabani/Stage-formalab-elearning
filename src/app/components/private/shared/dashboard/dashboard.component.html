@@ -1,0 +1,145 @@
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <app-header></app-header>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <app-sidebar></app-sidebar>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <!-- row -->
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-xl-3 col-xxl-3 col-sm-6">
+                        <div class="widget-stat card bg-primary overflow-hidden">
+                            <div class="card-header">
+                                <h3 class="card-title text-white">Total Students</h3>
+                                <h5 class="text-white mb-0"><i class="fa fa-caret-up"></i> 422</h5>
+                            </div>
+                            <div class="card-body text-center mt-3">
+                                <div class="ico-sparkline">
+                                    <div id="sparkline12"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-xxl-3 col-sm-6">
+                        <div class="widget-stat card bg-success overflow-hidden">
+                            <div class="card-header">
+                                <h3 class="card-title text-white">Total Instructor</h3>
+                                <h5 class="text-white mb-0"><i class="fa fa-caret-up"></i> {{instructor.length}}</h5>
+                            </div>
+                            <div class="card-body text-center mt-4 p-0">
+                                <div class="ico-sparkline">
+                                    <div id="spark-bar-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-xxl-3 col-sm-6">
+                        <div class="widget-stat card bg-secondary overflow-hidden">
+                            <div class="card-header pb-3">
+                                <h3 class="card-title text-white">Total Course</h3>
+                                <h4 class="text-white mb-0"><i class="fa fa-caret-up"></i> {{course.length}}</h4>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-xxl-3 col-sm-6">
+                        <div class="widget-stat card bg-danger overflow-hidden">
+                            <div class="card-header pb-3">
+                                <h3 class="card-title text-white">Fees Collection</h3>
+                                <h5 class="text-white mb-0"><i class="fa fa-caret-up"></i> 3280$</h5>
+                            </div>
+                            <div class="card-body p-0 mt-1">
+                                <span class="peity-line-2" data-width="100%"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-xxl-6 col-sm-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Income/Expense Report</h3>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="barChart_2"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-xxl-6 col-sm-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Income/Expense Report</h3>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="areaChart_1"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <app-footer></app-footer>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+
+
+</body>

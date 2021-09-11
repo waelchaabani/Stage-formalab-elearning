@@ -1,0 +1,627 @@
+<body class="red-skin">
+
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div id="preloader">
+        <div class="preloader" style="display: none;"><span></span><span></span></div>
+    </div>
+
+
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+
+        <!-- ============================================================== -->
+        <!-- Top header  -->
+        <app-topbar></app-topbar>
+        
+        <!-- ============================================================== -->
+        <!-- Start Navigation -->
+        <!-- Top header -->
+        <!-- ============================================================== -->
+
+        <!-- ============================ Hero Banner  Start================================== -->
+        <div class="image-cover hero_banner hero-inner-2 shadow rlt" style="background:url(assets/front/img/banner-2.jpg) no-repeat;" data-overlay="7">
+            <div class="elix_img_box">
+                <img src="assets/front/img/preet-o.png" class="img-fluid" alt="">
+            </div>
+            <div class="container">
+
+                <div class="hero-caption small_wd mb-5">
+                    <h1  *ngIf="IsLoggedIn" class="big-header-capt cl_2 mb-0">Welcome Student</h1>
+
+                    <h1  *ngIf="IsLoggedInInstructor"class="big-header-capt cl_2 mb-0">Welcome Instructor</h1>
+                    <h1 class="big-header-capt cl_2 mb-0">Learn on your schedule</h1>
+                </div>
+                <!-- Type -->
+                <div class="row">
+                    <div class="col-lg-8 col-md-12 col-sm-12">
+                        <div class="banner-search shadow_high">
+                            <div class="search_hero_wrapping">
+                                <div class="row">
+
+                                    <div class="col-lg-5 col-md-5 col-sm-12 br-right">
+                                        <div class="form-group">
+                                            <div class="input-with-icon">
+                                                <input type="text" class="form-control" placeholder="Keyword">
+                                                <img src="assets/front/img/search.svg" class="search-icon" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-5 col-md-4 col-sm-12 small-pad">
+                                        <div class="form-group">
+                                            <div class="input-with-icon">
+                                                <select id="c-category" *ngFor="let course of courses" class="form-control select2-hidden-accessible" data-select2-id="c-category" tabindex="-1" aria-hidden="true">
+                                                    <option value="" data-select2-id="2">&nbsp;</option>
+                                                    <option value="1">{{course.name}}</option>
+                                                    
+                                                </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="1" style="width: 294px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-c-category-container"><span class="select2-selection__rendered" id="select2-c-category-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Choose Category</span></span>
+                                                <span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span>
+                                                </span>
+                                                </span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                                <img src="assets/front/img/pin.svg" class="search-icon" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-3 col-sm-12 pl-0">
+                                        <div class="form-group none">
+                                            <a href="#" class="btn search-btn full-width">Search</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================ Hero Banner End ================================== -->
+
+        <!-- ============================ Trips Facts Start ================================== -->
+        <section class="p-0 trips_top">
+            <div class="container">
+                <div class="trips_wrap">
+                    <div class="row m-0">
+
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                            <div class="trips">
+                                <div class="trips_icons">
+                                    <i class="ti-video-camera"></i>
+                                </div>
+                                <div class="trips_detail">
+                                    <h4>100,000 online courses</h4>
+                                    <p>Nor again is there anyone who loves or pursues or desires</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                            <div class="trips">
+                                <div class="trips_icons">
+                                    <i class="ti-medall"></i>
+                                </div>
+                                <div class="trips_detail">
+                                    <h4>Expert instruction</h4>
+                                    <p>Nam libero tempore, cum soluta and nobis est eligendi optio</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                            <div class="trips none">
+                                <div class="trips_icons">
+                                    <i class="ti-infinite"></i>
+                                </div>
+                                <div class="trips_detail">
+                                    <h4>Lifetime access</h4>
+                                    <p>These cases are perfectly simple and easy to distinguish</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ============================ Trips Facts Start ================================== -->
+
+        <!-- ============================ Featured Courcses Start ================================== -->
+        <section class="min-sec">
+            <div class="container">
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 col-md-12 mb-3">
+                        <div class="sec-heading2">
+                            <div class="sec-left">
+                                <h3>Featured Courses</h3>
+                            </div>
+                            <div class="sec-right">
+                                <ul class="nav nav-tabs side-cates">
+                                    <li class="nav-item" *ngFor="let course of courses">
+                                        <a class="nav-link active" href="javascript:void(0);">{{course.name}}</a>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 p-0">
+
+                        <div class="arrow_slide three_slide-dots arrow_middle slick-initialized slick-slider slick-dotted" role="toolbar"><button type="button" data-role="none" class="slick-prev slick-arrow" aria-label="Previous" role="button" style="display: flex;">Previous</button>
+
+                            <!-- Single Slide -->
+                            <div aria-live="polite" class="slick-list draggable">
+                                <div class="slick-track" role="listbox" style="opacity: 1; width: 2640px; transform: translate3d(-1200px, 0px, 0px);">
+                                  
+                                    <div class="singles_items slick-slide slick-active"  style="width: 240px;" >
+                                        <div class="edu_cat">
+                                            <div class="pic">
+                                                <a class="pic-main" href="#" style="background-image:url(assets/front/img/course-10.jpg);" tabindex="-1"></a>
+                                            </div>
+                                            <div class="edu_data">
+                                                <h4 class="title"><a href="#" tabindex="-1">Software &amp; Development</a></h4>
+                                                <ul class="meta">
+                                                    <li class="video"><i class="ti-video-clapper"></i>23 Videos</li>
+                                                    <li class="lessions"><i class="ti-book"></i>54 Lessions</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                    
+                                    <div class="singles_items slick-slide slick-active" data-slick-index="3" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide13" style="width: 240px;">
+                                        <div class="edu_cat">
+                                            <div class="pic">
+                                                <a class="pic-main" href="#" style="background-image:url(assets/front/img/course-10.jpg);" tabindex="0"></a>
+                                            </div>
+                                            <div class="edu_data">
+                                                <h4 class="title"><a href="#" tabindex="0">Software &amp; Development</a></h4>
+                                                <ul class="meta">
+                                                    <li class="video"><i class="ti-video-clapper"></i>23 Videos</li>
+                                                    <li class="lessions"><i class="ti-book"></i>54 Lessions</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="singles_items slick-slide slick-active" data-slick-index="4" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide14" style="width: 240px;">
+                                        <div class="edu_cat">
+                                            <div class="pic">
+                                                <a class="pic-main" href="#" style="background-image:url(assets/front/img/course-11.jpg);" tabindex="0"></a>
+                                            </div>
+                                            <div class="edu_data">
+                                                <h4 class="title"><a href="#" tabindex="0">Business Development</a></h4>
+                                                <ul class="meta">
+                                                    <li class="video"><i class="ti-video-clapper"></i>23 Videos</li>
+                                                    <li class="lessions"><i class="ti-book"></i>54 Lessions</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="singles_items slick-slide slick-cloned" data-slick-index="5" aria-hidden="true" tabindex="-1" style="width: 240px;">
+                                        <div class="edu_cat">
+                                            <div class="pic">
+                                                <a class="pic-main" href="#" style="background-image:url(assets/front/img/course-7.jpg);" tabindex="-1"></a>
+                                            </div>
+                                            <div class="edu_data">
+                                                <h4 class="title"><a href="#" tabindex="-1">Finance &amp; Accounting</a></h4>
+                                                <ul class="meta">
+                                                    <li class="video"><i class="ti-video-clapper"></i>23 Videos</li>
+                                                    <li class="lessions"><i class="ti-book"></i>54 Lessions</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="singles_items slick-slide slick-cloned" data-slick-index="6" aria-hidden="true" tabindex="-1" style="width: 240px;">
+                                        <div class="edu_cat">
+                                            <div class="pic">
+                                                <a class="pic-main" href="#" style="background-image:url(assets/front/img/course-8.jpg);" tabindex="-1"></a>
+                                            </div>
+                                            <div class="edu_data">
+                                                <h4 class="title"><a href="#" tabindex="-1">Gym &amp; Lifestyle</a></h4>
+                                                <ul class="meta">
+                                                    <li class="video"><i class="ti-video-clapper"></i>23 Videos</li>
+                                                    <li class="lessions"><i class="ti-book"></i>54 Lessions</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="singles_items slick-slide slick-cloned" data-slick-index="7" aria-hidden="true" tabindex="-1" style="width: 240px;" *ngFor="let course of courses" >
+                                        <div class="edu_cat">
+                                            <div class="pic">
+                                                <a class="pic-main" href="#" style="background-image:url(assets/front/img/course-10.jpg);" tabindex="-1"></a>
+                                            </div>
+                                                <div class="edu_data">
+                                                <h4 class="title"><a href="#" tabindex="-1">{{course.name}} &amp; </a></h4>
+                                                <ul class="meta">
+                                                    <li class="video"><i class="ti-video-clapper"></i>{{course.estimated_duration}}</li>
+                                                    <br>
+                                                    <li class="lessions"><i class="ti-book"></i>{{course.tag}}</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Slide -->
+
+
+                            <!-- Single Slide -->
+
+
+                            <!-- Single Slide -->
+
+
+                            <!-- Single Slide -->
+
+
+                            
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <!-- ============================ Featured Courcses End ================================== -->
+
+        <!-- ============================ Featured Category Start ================================== -->
+        <section class="bg-light">
+            <div class="container">
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 col-md-12 mb-3">
+                        <div class="sec-heading2">
+                            <div class="sec-left">
+                                <h3>Got &amp; Popular Categories</h3>
+                            </div>
+                            <div class="sec-right">
+                                <a href="javascript:void(0);" class="btn-br-more">Browse More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 p-0">
+
+                        <div class="arrow_slide three_slide-dots arrow_middle slick-initialized slick-slider slick-dotted" role="toolbar"><button type="button" data-role="none" class="slick-prev slick-arrow" aria-label="Previous" role="button" style="display: flex;">Previous</button>
+
+                            <!-- Single Slide -->
+                            <div aria-live="polite" class="slick-list draggable">
+                                <div class="slick-track" role="listbox" style="opacity: 1; width: 2640px; transform: translate3d(-1200px, 0px, 0px);">
+                                  
+                                    <div class="singles_items slick-slide slick-active"  style="width: 240px;" >
+                                        <div class="edu_cat">
+                                            <div class="pic">
+                                                <a class="pic-main" href="#" style="background-image:url(assets/front/img/course-10.jpg);" tabindex="-1"></a>
+                                            </div>
+                                            <div class="edu_data">
+                                                <h4 class="title"><a href="#" tabindex="-1">Software &amp; Development</a></h4>
+                                                <ul class="meta">
+                                                    <li class="video"><i class="ti-video-clapper"></i>23 Videos</li>
+                                                    <li class="lessions"><i class="ti-book"></i>54 Lessions</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                    
+                                    <div class="singles_items slick-slide slick-active" data-slick-index="3" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide13" style="width: 240px;">
+                                        <div class="edu_cat">
+                                            <div class="pic">
+                                                <a class="pic-main" href="#" style="background-image:url(assets/front/img/course-10.jpg);" tabindex="0"></a>
+                                            </div>
+                                            <div class="edu_data">
+                                                <h4 class="title"><a href="#" tabindex="0">Software &amp; Development</a></h4>
+                                                <ul class="meta">
+                                                    <li class="video"><i class="ti-video-clapper"></i>23 Videos</li>
+                                                    <li class="lessions"><i class="ti-book"></i>54 Lessions</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="singles_items slick-slide slick-active" data-slick-index="4" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide14" style="width: 240px;">
+                                        <div class="edu_cat">
+                                            <div class="pic">
+                                                <a class="pic-main" href="#" style="background-image:url(assets/front/img/course-11.jpg);" tabindex="0"></a>
+                                            </div>
+                                            <div class="edu_data">
+                                                <h4 class="title"><a href="#" tabindex="0">Business Development</a></h4>
+                                                <ul class="meta">
+                                                    <li class="video"><i class="ti-video-clapper"></i>23 Videos</li>
+                                                    <li class="lessions"><i class="ti-book"></i>54 Lessions</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="singles_items slick-slide slick-cloned" data-slick-index="5" aria-hidden="true" tabindex="-1" style="width: 240px;">
+                                        <div class="edu_cat">
+                                            <div class="pic">
+                                                <a class="pic-main" href="#" style="background-image:url(assets/front/img/course-7.jpg);" tabindex="-1"></a>
+                                            </div>
+                                            <div class="edu_data">
+                                                <h4 class="title"><a href="#" tabindex="-1">Finance &amp; Accounting</a></h4>
+                                                <ul class="meta">
+                                                    <li class="video"><i class="ti-video-clapper"></i>23 Videos</li>
+                                                    <li class="lessions"><i class="ti-book"></i>54 Lessions</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="singles_items slick-slide slick-cloned" data-slick-index="6" aria-hidden="true" tabindex="-1" style="width: 240px;">
+                                        <div class="edu_cat">
+                                            <div class="pic">
+                                                <a class="pic-main" href="#" style="background-image:url(assets/front/img/course-8.jpg);" tabindex="-1"></a>
+                                            </div>
+                                            <div class="edu_data">
+                                                <h4 class="title"><a href="#" tabindex="-1">Gym &amp; Lifestyle</a></h4>
+                                                <ul class="meta">
+                                                    <li class="video"><i class="ti-video-clapper"></i>23 Videos</li>
+                                                    <li class="lessions"><i class="ti-book"></i>54 Lessions</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="singles_items slick-slide slick-cloned" data-slick-index="7" aria-hidden="true" tabindex="-1" style="width: 240px;" *ngFor="let category of categories" >
+                                        <div class="edu_cat">
+                                            <div class="pic">
+                                                <img [src]="category.image" >                                            </div>
+                                            <div class="edu_data">
+                                                <h4 class="title"><a href="#" tabindex="-1">{{category.name}} &amp; </a></h4>
+                                                <ul class="meta">
+                                                    <li class="video"><i class="ti-video-clapper"></i>23 Videos</li>
+                                                    <li class="lessions"><i class="ti-book"></i>54 Lessions</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Slide -->
+
+
+                            <!-- Single Slide -->
+
+
+                            <!-- Single Slide -->
+
+
+                            <!-- Single Slide -->
+
+
+                            
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <!-- ============================ Featured Category End ================================== -->
+
+        <!-- ========================== Articles Section =============================== -->
+        <section class="min-sec">
+            <div class="container">
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="sec-heading-flex">
+                            <h2 class="pl-2">Recent Articles</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <!-- Single Article -->
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <div class="articles_grid_style">
+                            <div class="articles_grid_thumb">
+                                <a href="blog-detail.html"><img src="assets/front/img/b-1.jpg" class="img-fluid" alt=""></a>
+                            </div>
+
+                            <div class="articles_grid_caption">
+                                <h4>The National Minimum wage is an important part</h4>
+                                <div class="articles_grid_author">
+                                    <div class="articles_grid_author_img"><img src="assets/front/img/user-1.jpg" class="img-fluid" alt=""></div>
+                                    <h4>Adam Willsone</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Article -->
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <div class="articles_grid_style">
+                            <div class="articles_grid_thumb">
+                                <a href="blog-detail.html"><img src="assets/front/img/b-2.jpg" class="img-fluid" alt=""></a>
+                            </div>
+
+                            <div class="articles_grid_caption">
+                                <h4>The National Minimum wage is an important part</h4>
+                                <div class="articles_grid_author">
+                                    <div class="articles_grid_author_img"><img src="assets/front/img/user-2.jpg" class="img-fluid" alt=""></div>
+                                    <h4>Rikki Sen</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Article -->
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <div class="articles_grid_style">
+                            <div class="articles_grid_thumb">
+                                <a href="blog-detail.html"><img src="assets/front/img/b-3.jpg" class="img-fluid" alt=""></a>
+                            </div>
+
+                            <div class="articles_grid_caption">
+                                <h4>The National Minimum wage is an important part</h4>
+                                <div class="articles_grid_author">
+                                    <div class="articles_grid_author_img"><img src="assets/front/img/user-3.jpg" class="img-fluid" alt=""></div>
+                                    <h4>Daniel Wikjones</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- ========================== Articles Section =============================== -->
+
+        <!-- ============================== Start Newsletter ================================== -->
+        <section class="bg-cover newsletter inverse-theme" style="background:url(assets/front/img/banner-2.jpg);" data-overlay="9">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-7 col-md-8 col-sm-12">
+                        <div class="text-center">
+                            <h2>Join Thousand of Happy Students!</h2>
+                            <p>Subscribe our newsletter &amp; get latest news and updation!</p>
+                            <form class="sup-form">
+                                <input type="email" class="form-control sigmup-me" placeholder="Your Email Address" required="required">
+                                <input type="submit" class="btn btn-theme" value="Get Started">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ================================= End Newsletter =============================== -->
+
+        <!-- ============================ Footer Start ================================== -->
+        <app-footers></app-footers>
+
+        <!-- Log In Modal -->
+        <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="registermodal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered login-pop-form" role="document">
+                <div class="modal-content" id="registermodal">
+                    <span class="mod-close" data-dismiss="modal" aria-hidden="true"><i class="ti-close"></i></span>
+                    <div class="modal-body">
+                        <h4 class="modal-header-title">Log In</h4>
+                        <div class="login-form">
+                            <form>
+
+                                <div class="form-group">
+                                    <label>User Name</label>
+                                    <input type="text" class="form-control" placeholder="Username">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input type="password" class="form-control" placeholder="*******">
+                                </div>
+
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-md full-width pop-login">Login</button>
+                                </div>
+
+                            </form>
+                        </div>
+
+                        <div class="social-login mb-3">
+                            <ul>
+                                <li>
+                                    <input id="reg" class="checkbox-custom" name="reg" type="checkbox">
+                                    <label for="reg" class="checkbox-custom-label">Save Password</label>
+                                </li>
+                                <li class="right"><a href="#" class="theme-cl">Forget Password?</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="modal-divider"><span>Or login via</span></div>
+                        <div class="social-login ntr mb-3">
+                            <ul>
+                                <li><a href="#" class="btn connect-fb"><i class="ti-facebook"></i>Facebook</a></li>
+                                <li><a href="#" class="btn connect-google"><i class="ti-google"></i>Google</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="text-center">
+                            <p class="mt-2">Haven't Any Account? <a href="register.html" class="link">Click here</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Modal -->
+
+        <!-- Sign Up Modal -->
+        <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="sign-up" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered login-pop-form" role="document">
+                <div class="modal-content" id="sign-up">
+                    <span class="mod-close" data-dismiss="modal" aria-hidden="true"><i class="ti-close"></i></span>
+                    <div class="modal-body">
+                        <h4 class="modal-header-title">Sign Up</h4>
+                        <div class="login-form">
+                            <form>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Full Name">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Email">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Username">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="*******">
+                                </div>
+
+
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-md full-width pop-login">Sign Up</button>
+                                </div>
+
+                            </form>
+                        </div>
+
+                        <div class="modal-divider"><span>Or Signup via</span></div>
+                        <div class="social-login ntr mb-3">
+                            <ul>
+                                <li><a href="#" class="btn connect-fb"><i class="ti-facebook"></i>Facebook</a></li>
+                                <li><a href="#" class="btn connect-google"><i class="ti-google"></i>Google</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="text-center">
+                            <p class="mt-3"><i class="ti-user mr-1"></i>Already Have An Account? <a href="#" class="link">Go For LogIn</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Modal -->
+
+        <a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
+
+
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+
+    <!-- ============================================================== -->
+    <!-- This page plugins -->
+    <!-- ============================================================== -->
+
+
+</body>

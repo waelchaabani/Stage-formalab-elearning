@@ -1,0 +1,244 @@
+<body class="log-bg">
+
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div id="preloader">
+        <div class="preloader"><span></span><span></span></div>
+    </div>
+
+
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+
+        <!-- ========================== SignUp Elements ============================= -->
+        <section class="log-space">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-11 col-md-11">
+
+                        <div class="row no-gutters position-relative log_rads">
+                            <div class="col-lg-6 col-md-5 bg-cover"
+                                style="background:#1f2431 url(assets/front/img/log.png)no-repeat;">
+                                <div class="lui_9okt6">
+                                    <div class="_loh_revu97">
+                                        <div id="reviews-login">
+
+                                            <!-- Single Reviews -->
+                                            <div class="_loh_r96">
+                                                <div class="_bloi_quote"><i class="fa fa-quote-left"></i></div>
+                                                <div class="_loh_r92">
+                                                    <h4>Good Services</h4>
+                                                </div>
+                                                <div class="_loh_r93">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                        eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                </div>
+                                                <div class="_loh_foot_r93">
+                                                    <h4>Shilpa D. Setty</h4>
+                                                    <span>Team Leader</span>
+                                                </div>
+                                            </div>
+
+                                            <!-- Single Reviews -->
+                                            <div class="_loh_r96">
+                                                <div class="_bloi_quote"><i class="fa fa-quote-left"></i></div>
+                                                <div class="_loh_r92">
+                                                    <h4>Good Services</h4>
+                                                </div>
+                                                <div class="_loh_r93">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                        eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                </div>
+                                                <div class="_loh_foot_r93">
+                                                    <h4>Adam Wilsom</h4>
+                                                    <span>Mak Founder</span>
+                                                </div>
+                                            </div>
+
+                                            <!-- Single Reviews -->
+                                            <div class="_loh_r96">
+                                                <div class="_bloi_quote"><i class="fa fa-quote-left"></i></div>
+                                                <div class="_loh_r92">
+                                                    <h4>Customer Support</h4>
+                                                </div>
+                                                <div class="_loh_r93">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                        eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                </div>
+                                                <div class="_loh_foot_r93">
+                                                    <h4>Kunal M. Wilsom</h4>
+                                                    <span>CEO & Founder</span>
+                                                </div>
+                                            </div>
+
+                                            <!-- Single Reviews -->
+                                            <div class="_loh_r96">
+                                                <div class="_bloi_quote"><i class="fa fa-quote-left"></i></div>
+                                                <div class="_loh_r92">
+                                                    <h4>Ultimate Services</h4>
+                                                </div>
+                                                <div class="_loh_r93">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                        eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                </div>
+                                                <div class="_loh_foot_r93">
+                                                    <h4>Mark Jugermark</h4>
+                                                    <span>MCL Founder</span>
+                                                </div>
+                                            </div>
+                                            <!-- Single Reviews -->
+                                            <div class="_loh_r96">
+                                                <div class="_bloi_quote"><i class="fa fa-quote-left"></i></div>
+                                                <div class="_loh_r92">
+                                                    <h4>Item Support</h4>
+                                                </div>
+                                                <div class="_loh_r93">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                        eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                </div>
+                                                <div class="_loh_foot_r93">
+                                                    <h4>Kirti Washinton</h4>
+                                                    <span>Web Designer</span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-7 position-static p-4">
+                                <div class="log_wraps">
+                                    <a href="index.html" class="log-logo_head"><img src="assets/front/img/logo.png"
+                                            class="img-fluid" width="80" alt="" /></a>
+                                    <div class="log__heads">
+                                        <h4 class="mt-0 logs_title">Create An <span class="theme-cl">Account</span><hr><h4 class="mt-0 logs_title">Student</h4></h4>
+                                    </div>
+                                    <form class="user" [formGroup]="registerForm" (ngSubmit)="register()">
+                                        <div class="form-group">
+                                            <label>FirstName*</label>
+                                            <input type="text" name="firstname" id="firstname"
+                                                class="form-control form-control-user" formControlName="firstname"
+                                                placeholder="First Name">
+                                            <div *ngIf="firstname?.touched && firstname?.invalid">
+                                                <small *ngIf="firstname?.errors?.required" class="text-danger">Firstname
+                                                    is
+                                                    required<br></small>
+                                                <small *ngIf="firstname?.errors?.pattern" class="text-danger">Invalid
+                                                    Firstname<br></small>
+                                                <small *ngIf="firstname?.errors?.minlength"
+                                                    class="text-danger">Firstname must contain two
+                                                    characters at least</small>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>LastName*</label>
+                                            <input type="text" name="lastname" id="lastname"
+                                                class="form-control form-control-user" formControlName="lastname"
+                                                placeholder="Last Name">
+                                            <div *ngIf="lastname?.touched && lastname?.invalid">
+                                                <small *ngIf="lastname?.errors?.required" class="text-danger">Lastname
+                                                    is required<br></small>
+                                                <small *ngIf="lastname?.errors?.pattern" class="text-danger">Invalid
+                                                    Lastname<br></small>
+                                                <small *ngIf="lastname?.errors?.minlength" class="text-danger">Lastname
+                                                    must contain two characters at least</small>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label>Emain Address*</label>
+                                            <input type="email" class="form-control form-control-user"
+                                                id="exampleInputEmail1" formControlName="email"
+                                                aria-describedby="emailHelp" placeholder="Email Address">
+                                            <div *ngIf="email?.touched && email?.invalid">
+                                                <small *ngIf="email?.errors?.required" class="text-danger">Email is
+                                                    required<br></small>
+                                                <small *ngIf="email?.errors?.email" class="text-danger">Invalid
+                                                    Email<br></small>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="form-group">
+                                            <label>Password*</label>
+                                            <input type="password" class="form-control form-control-user"
+                                                id="exampleInputPassword1" placeholder="..." formControlName="password"
+                                                placeholder="Password">
+                                            <div *ngIf="password?.touched && password?.invalid">
+                                                <small *ngIf="password?.errors?.required" class="text-danger">Password
+                                                    is required<br></small>
+                                                <small *ngIf="password?.errors?.minlength" class="text-danger">password
+                                                    must contain 6
+                                                    characters at least</small>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Image*</label>
+                                            <input type="file" name="photo" id="photo"
+                                                class="form-control form-control-user" formControlName="photo"
+                                                placeholder="First Name">
+                                            <div *ngIf="photo?.touched && photo?.invalid">
+                                                <small *ngIf="photo?.errors?.required" class="text-danger">Firstname
+                                                    is
+                                                    required<br></small>
+                                                
+                                            </div>
+                                        </div>
+
+                                        <button class="btn btn-primary btn-user btn-block" type="submit" >
+                                            Sign Up
+                                        </button>
+
+                                        <div class="form-group text-center">
+                                            <span>Or SignUp with</span>
+                                        </div>
+
+                                        <div class="social_logs">
+                                            <ul>
+                                                <li class="fb-login">
+                                                    <a href="#"><img src="assets/front/img/google.svg"
+                                                            class="img-fluid mr-2" width="15" alt="" />Google</a>
+                                                </li>
+                                                <li class="gp-login">
+                                                    <a href="#"><img src="assets/front/img/facebook.svg"
+                                                            class="img-fluid mr-2" width="15" alt="" />Facebook</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </form>
+
+                                    <div class="form-group text-center mb-0 mt-3">
+                                        Have You Already An Account? <a [routerLink]="['/login']" class="theme-cl">LogIn</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ========================== Login Elements ============================= -->
+
+
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+
+    <!-- ============================================================== -->
+    <!-- This page plugins -->
+    <!-- ============================================================== -->
+
+</body>

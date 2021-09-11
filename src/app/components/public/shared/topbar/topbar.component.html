@@ -1,0 +1,49 @@
+<div class="header header-light">
+    <div class="container">
+        <nav id="navigation" class="navigation navigation">
+            <div class="nav-header">
+                <a class="nav-brand" href="#">
+                    <img src="assets/img/logo.png" class="logo" alt="">
+                </a>
+                <div class="nav-toggle"></div>
+            </div>
+            <div class="nav-menus-wrapper nav-menus-wrapper-open" style="transition-property: left;"><span
+                    class="nav-menus-wrapper-close-button">✕</span>
+                <ul class="nav-menu">
+
+                    <li class="active"><a [routerLink]="['/home']">Home<span class="submenu-indicator"></span></a>
+
+                    </li>
+
+                    <li><a   [routerLink]="['/homecourses']">Courses<span class="submenu-indicator"></span></a>
+                    </li>
+                    <li><a [routerLink]="['/blog']">Blog<span class="submenu-indicator"></span></a>
+                    </li>
+                    <li><a [routerLink]="['/aboutus']">About Us<span class="submenu-indicator"></span>
+                                </a>
+                    </li>
+
+                    <li class=""><a [routerLink]="['/contact']">Contact</a></li>
+                    <li *ngIf="IsLoggedInInstructor"><a  [routerLink]="['/instructordashoard']">Dashboard Instructor<span class="submenu-indicator"></span><span
+                        ></span></a>
+            </li>
+
+                </ul>
+
+
+                <ul class="nav-menu nav-menu-social align-to-right">
+                    <li  *ngIf="!IsLoggedIn" class="login_click light">
+                        <a [routerLink]="['/registerinstructor']">Sign up As Instructor</a>
+                    </li>
+                    <li  *ngIf="!IsLoggedIn" class="login_click theme-bg">
+                        <a   [routerLink]="['/register']">Sign up As Student</a>
+                    </li>
+                    <li   *ngIf="IsLoggedIn" class="login_click theme-bg">
+                        <a   (click)="logout()">Logout</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-overlay-panel" style="background-color: rgba(0, 0, 0, 0.5); display: block;"></div>
+        </nav>
+    </div>
+</div>
